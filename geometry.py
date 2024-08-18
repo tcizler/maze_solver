@@ -40,3 +40,14 @@ class Cell:
             canvas.create_line(
                 self._topleft.x, self._bottomright.y, self._bottomright.x, self._bottomright.y, fill=fill_color, width = 2
             )
+
+    def draw_move(self, target, canvas, undo = False):
+        start_point = Point((self._topleft.x + self._bottomright.x) / 2, (self._topleft.y + self._bottomright.y) / 2)
+        end_point = Point((target._topleft.x + target._bottomright.x) / 2, (target._topleft.y + target._bottomright.y) / 2)
+        if undo:
+            fill_color = "grey"
+        else:
+            fill_color = "red"
+        canvas.create_line(
+            start_point.x, start_point.y, end_point.x, end_point.y, fill=fill_color, width = 2
+        )

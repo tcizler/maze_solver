@@ -13,4 +13,6 @@ cell2.draw(window.canvas,"green")
 cell3 = Cell(Point(275,275),Point(325,325))
 cell3.draw(window.canvas,"red")
 
+cell3.draw_move(cell2, window.canvas)
+
 window.wait_for_close()
